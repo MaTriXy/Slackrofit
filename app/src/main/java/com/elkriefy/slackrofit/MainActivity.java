@@ -60,9 +60,7 @@ public class MainActivity extends AppCompatActivity {
         file = RequestBody.create(MediaType.parse("multipart/form-data"), str.getBytes());
 
         Map<String, RequestBody> map = new HashMap<>();
-//        RequestBody fileBody = RequestBody.create(MediaType.parse("image/png"), file);
         map.put("file\"; filename=\"heapDump.md\"", file);
-
         call = slackApi.uploadFile(SlackApi.TOKEN, map, "text", "heapDump.md", "Test Dump", "Check this out", SlackApi.MEMORY_LEAK_CHANNEL);
     }
 
